@@ -7,7 +7,7 @@ Summary(pl):	K Desktop Environment - aplikacje sieciowe
 Summary(pt_BR):	K Desktop Environment - aplicações de rede
 Name:		kdenetwork-kroupware
 Version:	%{_ver}
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.erfrakon.de/projects/kolab/download/kde-kolab-client-%{version}/src/%{name}-%{version}.tar.bz2
@@ -28,7 +28,7 @@ Provides:	kdenetwork
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdenetwork
 
-%define		_prefix		/usr/X11R6
+%define		_prefix		/usr
 %define		_fontdir	/usr/share/fonts
 %define		_htmldir	/usr/share/doc/kde/HTML
 
