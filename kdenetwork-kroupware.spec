@@ -342,7 +342,7 @@ Obsoletes:	kdenetwork-ktnef
 %description ktnef
 A viewer/extractor for TNEF files.
 
-%descrpition -l pl ktnef
+%descrpition ktnef -l pl
 Konwerter/ekstraktor plików TNEF.
 
 %package kxmlrpcd
