@@ -15,9 +15,6 @@ Source0:	http://www.erfrakon.de/projects/kolab/download/kde-kolab-client-%{versi
 Source2:	lisa.init
 Source3:        lisa.sysconfig
 Source4:        kdenetwork-lisarc
-#Patch0:		%{name}-utmpx.patch
-#Patch1:		%{name}-use_sendmail.patch
-#Patch2:		%{name}-kmail_toolbars.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
@@ -27,9 +24,10 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-progs
 BuildRequires:	perl
 BuildRequires:	qt-devel >= 3.1
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Provides:	kdenetwork
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdenetwork
+
 %define		_prefix		/usr/X11R6
 %define		_fontdir	/usr/share/fonts
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -104,10 +102,10 @@ Summary(pl):	Klient s³ownika
 License:	Artistic
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
-Provides:	kdict
-Obsoletes:	kdict
 Provides:	kdenetwork-kdict
+Provides:	kdict
 Obsoletes:	kdenetwork-kdict
+Obsoletes:	kdict
 
 %description kdict
 Online dictionary client.
@@ -124,8 +122,8 @@ Summary:	KDE Internet Daemon
 Summary(pl):	Demon internetowy KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
-Obsoletes:	%{name}-krfb < 3.1-6
 Provides:	kdenetwork-kinetd
+Obsoletes:	%{name}-krfb < 3.1-6
 Obsoletes:	kdenetwork-kinetd
 
 %description kinetd
@@ -380,9 +378,6 @@ Przegl±darka LAN-u dla KDE.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
-#%patch2 -p1
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
