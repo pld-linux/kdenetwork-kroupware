@@ -7,8 +7,7 @@ Summary(pl):	K Desktop Environment - aplikacje sieciowe
 Summary(pt_BR):	K Desktop Environment - aplicações de rede
 Name:		kdenetwork-kroupware
 Version:	%{_ver}
-Release:	3
-Epoch:		9
+Release:	2
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.erfrakon.de/projects/kolab/download/kde-kolab-client-%{version}/src/%{name}-%{version}.tar.bz2
@@ -29,7 +28,8 @@ BuildRequires:	libxml2-progs
 BuildRequires:	perl
 BuildRequires:	qt-devel >= 3.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
+Provides:	kdenetwork
+Obsoletes:	kdenetwork
 %define		_prefix		/usr/X11R6
 %define		_fontdir	/usr/share/fonts
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -84,7 +84,9 @@ Summary:	Header files and development documentation
 Summary(pl):	Pliki nag³ówkowe i dokumentacja developerska
 Summary(pt_BR):	Arquivos de inclusão para compilar aplicações que usem as bibliotecas do kdenetwork
 Group:		X11/Development/Libraries
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-devel
+Obsoletes:	kdenetwork-devel
 
 %description devel
 Header files and development documentation.
@@ -101,9 +103,11 @@ Summary:	Online dictionary client
 Summary(pl):	Klient s³ownika
 License:	Artistic
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
 Provides:	kdict
 Obsoletes:	kdict
+Provides:	kdenetwork-kdict
+Obsoletes:	kdenetwork-kdict
 
 %description kdict
 Online dictionary client.
@@ -119,8 +123,10 @@ Internet.
 Summary:	KDE Internet Daemon
 Summary(pl):	Demon internetowy KDE
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
 Obsoletes:	%{name}-krfb < 3.1-6
+Provides:	kdenetwork-kinetd
+Obsoletes:	kdenetwork-kinetd
 
 %description kinetd
 An Internet daemon that starts network services on demand.
@@ -132,7 +138,9 @@ Demon internetowy, który uruchamia na ¿±danie us³ugi sieciowe.
 Summary:	File Downloander
 Summary(pl):	¦ci±gacz plików
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-kget
+Obsoletes:	kdenetwork-kget
 
 %description kget
 File Downloader.
@@ -146,7 +154,9 @@ Summary(pl):	Klient AOL Instant Messenger dla KDE
 Summary(pt_BR):	Comunicador que usa o protocolo AOL
 License:	LGPL
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-kit
+Obsoletes:	kdenetwork-kit
 
 %description kit
 KDE AOL Instant Messenger.
@@ -163,8 +173,10 @@ Summary(pl):	Program pocztowy KDE
 Summary(pt_BR):	Cliente / leitor de e-mails para o KDE
 Group:		X11/Applications
 Requires:	kdebase-mailnews
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
 Requires:	%{name} >= %{version}
+Provides:	kdenetwork-kmail
+Obsoletes:	kdenetwork-kmail
 
 %description kmail
 This is electronic mail client for KDE. It is able to retrievie mail
@@ -187,7 +199,9 @@ Summary:	KDE News Ticker
 Summary(pl):	News Ticker dla KDE
 Summary(pt_BR):	Miniaplicativo de exibição de notícias para o painel Kicker
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-knewsticker
+Obsoletes:	kdenetwork-knewsticker
 
 %description knewsticker
 KDE News Ticker.
@@ -204,8 +218,10 @@ Summary(pl):	Czytnik newsów dla KDE
 Summary(pt_BR):	Leitor de notícias (news) do KDE
 Group:		X11/Applications
 Requires:	kdebase-mailnews
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
 Requires:	%{name} >= %{version}
+Provides:	kdenetwork-knode
+Obsoletes:	kdenetwork-knode
 
 %description knode
 This is a news reader for KDE. It has threading and everything else
@@ -222,7 +238,9 @@ Summary:	KDE 'biff' application
 Summary(pl):	Wska¼nik skrzynki pocztowej dla KDE
 Summary(pt_BR):	Miniaplicativo de monitoração da caixa de correio
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-korn
+Obsoletes:	kdenetwork-korn
 
 %description korn
 A simple program showing number of mails in your folders.
@@ -238,7 +256,9 @@ Miniaplicativo de monitoração da caixa de correio.
 Summary:	Public fileserver applet
 Summary(pl):	Applet publicznego serwera plików
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-kpf
+Obsoletes:	kdenetwork-kpf
 
 %description kpf
 Public fileserver applet.
@@ -251,8 +271,10 @@ Summary:	KDE PPP dialer
 Summary(pl):	Program do po³±czeñ modemowych dla KDE
 Summary(pt_BR):	O discador para Internet
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
 Requires:	ppp
+Provides:	kdenetwork-kppp
+Obsoletes:	kdenetwork-kppp
 
 %description kppp
 A PPPP dialer for KDE. It supports multiple accounts.
@@ -269,7 +291,9 @@ Summary:	KDE IRC client
 Summary(pl):	Klient IRC dla KDE
 Summary(pt_BR):	Cliente de IRC do KDE
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-ksirc
+Obsoletes:	kdenetwork-ksirc
 
 %description ksirc
 KDE IRC client.
@@ -284,8 +308,10 @@ Cliente de IRC do KDE.
 Summary:	Virtual Desktops
 Summary(pl):	Wirtualne biurka
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
 Requires:	%{name}-kinetd = %{version}
+Provides:	kdenetwork-krfb
+Obsoletes:	kdenetwork-krfb
 
 %description krfb
 Virtual Desktops.
@@ -297,7 +323,9 @@ Wirtualne biurka.
 Summary:	Talk daemon
 Summary(pl):	Daemon talk
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-ktalkd
+Obsoletes:	kdenetwork-ktalkd
 
 %description ktalkd
 Talk daemon.
@@ -306,18 +334,26 @@ Talk daemon.
 Demon talk.
 
 %package ktnef
-Summary:	ktnef
+Summary:	A viewer/extractor for TNEF files
+Summary(pl):	Konwerter/ekstraktor plików TNEF
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
- 
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-ktnef
+Obsoletes:	kdenetwork-ktnef
+
 %description ktnef
-ktnef
+A viewer/extractor for TNEF files.
+
+%descrpition -l pl ktnef
+Konwerter/ekstraktor plików TNEF.
 
 %package kxmlrpcd
 Summary:	KDE XmlRpc Daemon
 Summary(pl):	Deamon XmlRpc dla KDE
 Group:		X11/Applications
-Requires:	kdelibs >= %{version}
+Requires:	kdelibs >= 3.1.1
+Provides:	kdenetwork-kxmlrpcd
+Obsoletes:	kdenetwork-kxmlrpcd
 
 %description kxmlrpcd
 KDE XmlRpc Daemon.
@@ -329,10 +365,12 @@ Demon XmlRpc dla KDE.
 Summary:	KDE LAN Browser
 Summary(pl):	Przegl±darka LAN-u dla KDE
 Group:		X11/Applications
-Requires:	konqueror >= %{version}
+Requires:	konqueror >= 3.1.1
 Obsoletes:	%{name}-lisa
 Obsoletes:	lisa
 Provides:	lisa
+Provides:	kdenetwork-lanbrowser
+Obsoletes:	kdenetwork-lanbrowser
 
 %description lanbrowser
 KDE LAN Browser.
