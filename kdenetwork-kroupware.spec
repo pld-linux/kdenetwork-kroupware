@@ -13,8 +13,8 @@ Group:		X11/Libraries
 Source0:	http://www.erfrakon.de/projects/kolab/download/kde-kolab-client-%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	a250b51c787e5d18ca18bdad660b6b67
 Source2:	lisa.init
-Source3:        lisa.sysconfig
-Source4:        kdenetwork-lisarc
+Source3:	lisa.sysconfig
+Source4:	kdenetwork-lisarc
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
@@ -453,7 +453,7 @@ if [ "$1" = "0" ]; then
 	/sbin/chkconfig --del lisa
 fi
 
-%files 
+%files
 %defattr(644,root,root,755)
 %{_libdir}/libmimelib.la
 %attr(755,root,root) %{_libdir}/libmimelib.so.*
@@ -469,7 +469,7 @@ fi
 %attr(755,root,root) %{_libdir}/libkdenetwork.so
 %{_includedir}/*
 
-%files kdict 
+%files kdict
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kdict
 %{_libdir}/kde3/kdict_panelapplet.la
@@ -479,7 +479,7 @@ fi
 %{_pixmapsdir}/*/*/*/kdict*
 %{_applnkdir}/Utilities/kdict.desktop
 
-%files kget 
+%files kget
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kget
 %{_libdir}/kde3/khtml_kget.la
@@ -490,7 +490,7 @@ fi
 %{_pixmapsdir}/*/*/*/*kget*
 %{_applnkdir}/Network/Misc/kget.desktop
 
-%files kinetd 
+%files kinetd
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kded_kinetd.la
 %attr(755,root,root) %{_libdir}/kde3/kded_kinetd.so
@@ -498,14 +498,14 @@ fi
 %{_datadir}/services/kded/kinetd.desktop
 %{_datadir}/servicetypes/kinetdmodule.desktop
 
-%files kit 
+%files kit
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kit
 %{_applnkdir}/Network/Misc/kit.desktop
 %{_datadir}/apps/kit
 %{_pixmapsdir}/*/*/*/kit.png
 
-%files kmail 
+%files kmail
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kmail
 %attr(755,root,root) %{_bindir}/kmailcvt
@@ -522,7 +522,7 @@ fi
 %{_datadir}/services/kfile_rfc822.desktop
 %{_pixmapsdir}/*/*/*/kmail*.png
 
-%files knewsticker 
+%files knewsticker
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/knewstickerstub
 %{_libdir}/kde3/knewsticker_panelapplet.la
@@ -539,14 +539,14 @@ fi
 %{_datadir}/apps/kconf_update/kn*
 %{_pixmapsdir}/*/*/*/knewsticker.png
 
-%files knode 
+%files knode
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/knode
 %{_applnkdir}/Network/News/KNode.desktop
 %{_datadir}/apps/knode
 %{_pixmapsdir}/*/*/*/knode.png
 
-%files korn 
+%files korn
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/korn
 %{_applnkdir}/Network/Mail/KOrn.desktop
@@ -571,7 +571,7 @@ fi
 %{_datadir}/apps/kppp
 %{_pixmapsdir}/*/*/*/kppp.png
 
-%files krfb 
+%files krfb
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/krdc
 %attr(755,root,root) %{_bindir}/krfb
@@ -587,7 +587,7 @@ fi
 %{_pixmapsdir}/*/*/*/krdc*
 %{_pixmapsdir}/[!l]*/*/*/krfb*
 
-%files ksirc 
+%files ksirc
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ksirc
 %attr(755,root,root) %{_bindir}/dsirc
@@ -601,7 +601,7 @@ fi
 %{_datadir}/services/kntsrcfilepropsdlg.desktop
 %{_pixmapsdir}/[!l]*/*/*/ksirc*
 
-%files ktalkd 
+%files ktalkd
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/k*talkd*
 %{_libdir}/kde3/kcm_ktalkd.la
@@ -619,7 +619,7 @@ fi
 %{_pixmapsdir}/*/*/*/ktnef*
 
 
-%files kxmlrpcd 
+%files kxmlrpcd
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kxmlrpcd
 %{_libdir}/kxmlrpcd.la
@@ -628,7 +628,7 @@ fi
 %attr(755,root,root) %{_libdir}/kde3/kcm_xmlrpcd.so
 %{_datadir}/services/kxmlrpcd.desktop
 
-%files lanbrowser 
+%files lanbrowser
 %defattr(644,root,root,755)
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/lisarc
 %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/lisa
