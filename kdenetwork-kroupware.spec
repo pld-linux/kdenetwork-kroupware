@@ -1,17 +1,15 @@
 
-%define		_ver		1.0.1
-
 Summary:	K Desktop Environment - network applications
 Summary(es):	K Desktop Environment - aplicaciones de red
 Summary(pl):	K Desktop Environment - aplikacje sieciowe
 Summary(pt_BR):	K Desktop Environment - aplicações de rede
 Name:		kdenetwork-kroupware
-Version:	%{_ver}
-Release:	2
+Version:	1.0.2
+Release:	1
 License:	GPL
 Group:		X11/Libraries
 Source0:	http://www.erfrakon.de/projects/kolab/download/kde-kolab-client-%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	a250b51c787e5d18ca18bdad660b6b67
+# Source0-md5:	bcf13801ccc0aea66a9993f34d0479f8
 Source2:	lisa.init
 Source3:	lisa.sysconfig
 Source4:	kdenetwork-lisarc
@@ -69,17 +67,16 @@ Aplikacje sieciowe KDE. Pakiet zawiera:
 - Lanbrowser - przegl±darka LAN-u
 
 %description -l pt_BR
-Aplicações de Rede para o KDE.
-
-Incluídos neste pacote:
-
-kmail: leitor de correio knu: utilitários de rede korn: ferramenta de
-monitoração da caixa de correio kppp: configuração fácil para conexão
-PPP krn: leitor de notícias
+Aplicações de Rede para o KDE. Incluídos neste pacote:
+- kmail: leitor de correio
+- knu: utilitários de rede
+- korn: ferramenta de monitoração da caixa de correio
+- kppp: configuração fácil para conexão PPP
+- krn: leitor de notícias
 
 %package devel
 Summary:	Header files and development documentation
-Summary(pl):	Pliki nag³ówkowe i dokumentacja developerska
+Summary(pl):	Pliki nag³ówkowe i dokumentacja dla programistów
 Summary(pt_BR):	Arquivos de inclusão para compilar aplicações que usem as bibliotecas do kdenetwork
 Group:		X11/Development/Libraries
 Requires:	kdelibs >= 3.1.1
@@ -90,7 +87,7 @@ Obsoletes:	kdenetwork-devel
 Header files and development documentation.
 
 %description devel -l pl
-Pliki nag³ówkowe i dokumentacja developerska.
+Pliki nag³ówkowe i dokumentacja dla programistów.
 
 %description devel -l pt_BR
 Arquivos de inclusão para compilar aplicações que usem as bibliotecas
@@ -186,7 +183,7 @@ This package contains version patched for better charset support.
 Program pocztowy dla KDE. Potrafi odczytywaæ pocztê z kont POP3 jak i
 lokalnych skrzynek.
 
-Ten pakiet zawiera wersj± programu z poprawion± obs³ug± zestawów
+Ten pakiet zawiera wersjê programu z poprawion± obs³ug± zestawów
 znaków.
 
 %description kmail -l pt_BR
@@ -617,7 +614,6 @@ fi
 %{_libdir}/libktnef.la
 %attr(755,root,root) %{_libdir}/libktnef.so.*
 %{_pixmapsdir}/*/*/*/ktnef*
-
 
 %files kxmlrpcd
 %defattr(644,root,root,755)
