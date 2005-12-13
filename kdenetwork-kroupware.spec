@@ -28,7 +28,6 @@ Provides:	kdenetwork
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdenetwork
 
-%define		_prefix		/usr
 %define		_fontdir	/usr/share/fonts
 %define		_htmldir	/usr/share/doc/kde/HTML
 
@@ -170,9 +169,9 @@ Summary:	KDE Mail client
 Summary(pl):	Program pocztowy KDE
 Summary(pt_BR):	Cliente / leitor de e-mails para o KDE
 Group:		X11/Applications
+Requires:	%{name} >= %{version}
 Requires:	kdebase-mailnews
 Requires:	kdelibs >= 3.1.1
-Requires:	%{name} >= %{version}
 Provides:	kdenetwork-kmail
 Obsoletes:	kdenetwork-kmail
 
@@ -215,9 +214,9 @@ Summary:	KDE News Reader
 Summary(pl):	Czytnik newsów dla KDE
 Summary(pt_BR):	Leitor de notícias (news) do KDE
 Group:		X11/Applications
+Requires:	%{name} >= %{version}
 Requires:	kdebase-mailnews
 Requires:	kdelibs >= 3.1.1
-Requires:	%{name} >= %{version}
 Provides:	kdenetwork-knode
 Obsoletes:	kdenetwork-knode
 
@@ -306,8 +305,8 @@ Cliente de IRC do KDE.
 Summary:	Virtual Desktops
 Summary(pl):	Wirtualne biurka
 Group:		X11/Applications
-Requires:	kdelibs >= 3.1.1
 Requires:	%{name}-kinetd = %{version}
+Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-krfb
 Obsoletes:	kdenetwork-krfb
 
@@ -363,7 +362,7 @@ Demon XmlRpc dla KDE.
 Summary:	KDE LAN Browser
 Summary(pl):	Przegl±darka LAN-u dla KDE
 Group:		X11/Applications
-PreReq:		rc-scripts
+Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Requires:	konqueror >= 3.1.1
 Obsoletes:	%{name}-lisa
@@ -399,13 +398,13 @@ kde_cv_utmp_file=/var/run/utmpx ; export kde_cv_utmp_file
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{rc.d/init.d,sysconfig},/usr/bin} \
+install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{rc.d/init.d,sysconfig},%{_bindir}} \
 	$RPM_BUILD_ROOT%{_applnkdir}{/Settings/KDE,/Network/{Communications,M{ail,isc},News}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT{%{_bindir}/{,res}lisa,/usr/bin}
+mv $RPM_BUILD_ROOT{%{_bindir}/{,res}lisa,%{_bindir}}
 
 ALD=$RPM_BUILD_ROOT%{_applnkdir}
 
@@ -628,11 +627,11 @@ fi
 
 %files lanbrowser
 %defattr(644,root,root,755)
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/lisarc
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/lisa
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/lisarc
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/lisa
 %attr(754,root,root) /etc/rc.d/init.d/lisa
-%attr(755,root,root) /usr/bin/lisa
-%attr(755,root,root) /usr/bin/reslisa
+%attr(755,root,root) %{_bindir}/lisa
+%attr(755,root,root) %{_bindir}/reslisa
 %{_libdir}/kde3/kio_lan.la
 %attr(755,root,root) %{_libdir}/kde3/kio_lan.so
 %{_libdir}/kde3/kcm_lanbrowser.la
