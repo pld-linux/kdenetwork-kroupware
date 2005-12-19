@@ -24,14 +24,10 @@ BuildRequires:	libtool
 BuildRequires:	libxml2-progs
 BuildRequires:	perl
 BuildRequires:	qt-devel >= 3.1
+BuildRequires:	rpmbuild(macros) >= 1.129
 Provides:	kdenetwork
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdenetwork
-
-%define		_fontdir	/usr/share/fonts
-%define		_htmldir	/usr/share/doc/kde/HTML
-
-%define		no_install_post_chrpath		1
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 KDE network applications. Package includes:
@@ -381,9 +377,7 @@ Przegl±darka LAN-u dla KDE.
 %setup -q
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
+kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_cv_utmp_file=/var/run/utmpx ; export kde_cv_utmp_file
 
 #%{__aclocal}
@@ -398,28 +392,13 @@ kde_cv_utmp_file=/var/run/utmpx ; export kde_cv_utmp_file
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sysconfdir}/{rc.d/init.d,sysconfig},%{_bindir}} \
-	$RPM_BUILD_ROOT%{_applnkdir}{/Settings/KDE,/Network/{Communications,M{ail,isc},News}}
+install -d $RPM_BUILD_ROOT{/etc/{rc.d/init.d,sysconfig},%{_desktopdir}}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT{%{_bindir}/{,res}lisa,%{_bindir}}
-
-ALD=$RPM_BUILD_ROOT%{_applnkdir}
-
-mv -f $ALD/{Internet,Network/Communications}/ksirc.desktop
-mv -f $ALD/{Internet,Network/Mail}/KMail.desktop
-mv -f $ALD/{Internet,Network/Misc}/Kppp.desktop
-mv -f $ALD/{Internet,Network/Misc}/kget.desktop
-mv -f $ALD/{Internet,Network/Misc}/kit.desktop
-mv -f $ALD/{Internet,Network/Misc}/krdc.desktop
-mv -f $ALD/{Internet,Network/News}/KNode.desktop
-mv -f $ALD/{Internet/More,Network/Mail}/KOrn.desktop
-mv -f $ALD/{Internet/More,Network/Misc}/kppplogview.desktop
-mv -f $ALD/{Internet/More,Network/News}/knewsticker-standalone.desktop
-mv -f $ALD/{Settings/[!K]*,Settings/KDE}
-mv -f $ALD/{System,Network/Misc}/krfb.desktop
+for f in `find $RPM_BUILD_ROOT%{_datadir}/applnk -name '*.desktop'` ; then
+	mv $f $RPM_BUILD_ROOT%{_desktopdir}/kde
 
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/lisa
 install %{SOURCE3} $RPM_BUILD_ROOT/etc/sysconfig/lisa
@@ -453,9 +432,9 @@ fi
 %files
 %defattr(644,root,root,755)
 %{_libdir}/libmimelib.la
-%attr(755,root,root) %{_libdir}/libmimelib.so.*
+%attr(755,root,root) %{_libdir}/libmimelib.so.*.*.*
 %{_libdir}/libkdenetwork.la
-%attr(755,root,root) %{_libdir}/libkdenetwork.so.*
+%attr(755,root,root) %{_libdir}/libkdenetwork.so.*.*.*
 %{_libdir}/kde3/kio_sieve.la
 %attr(755,root,root) %{_libdir}/kde3/kio_sieve.so*
 %{_datadir}/services/sieve.protocol
@@ -473,8 +452,8 @@ fi
 %attr(755,root,root) %{_libdir}/kde3/kdict_panelapplet.so
 %{_datadir}/apps/kdict
 %{_datadir}/apps/kicker/applets/kdictapplet.desktop
-%{_pixmapsdir}/*/*/*/kdict*
-%{_applnkdir}/Utilities/kdict.desktop
+%{_iconsdir}/*/*/*/kdict*
+%{_desktopdir}/kde/kdict.desktop
 
 %files kget
 %defattr(644,root,root,755)
@@ -484,8 +463,8 @@ fi
 %{_datadir}/apps/kget
 %{_datadir}/apps/khtml/kpartplugins/kget_plug_in.rc
 %{_datadir}/mimelnk/application/x-kgetlist.desktop
-%{_pixmapsdir}/*/*/*/*kget*
-%{_applnkdir}/Network/Misc/kget.desktop
+%{_iconsdir}/*/*/*/*kget*
+%{_desktopdir}/kde/kget.desktop
 
 %files kinetd
 %defattr(644,root,root,755)
@@ -498,9 +477,9 @@ fi
 %files kit
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kit
-%{_applnkdir}/Network/Misc/kit.desktop
 %{_datadir}/apps/kit
-%{_pixmapsdir}/*/*/*/kit.png
+%{_desktopdir}/kde/kit.desktop
+%{_iconsdir}/*/*/*/kit.png
 
 %files kmail
 %defattr(644,root,root,755)
@@ -510,14 +489,14 @@ fi
 %attr(755,root,root) %{_bindir}/mail.local
 %{_libdir}/kde3/kfile_rfc822.la
 %attr(755,root,root) %{_libdir}/kde3/kfile_rfc822.so
-%{_applnkdir}/Network/Mail/KMail.desktop
-%{_applnkdir}/Utilities/kmailcvt.desktop
 %{_datadir}/apps/kconf_update/k[!n]*
 %{_datadir}/apps/kconf_update/u*
 %{_datadir}/apps/kgpgcertmanager/kgpgcertmanagerui.rc
 %{_datadir}/apps/kmail
 %{_datadir}/services/kfile_rfc822.desktop
-%{_pixmapsdir}/*/*/*/kmail*.png
+%{_desktopdir}/kde/KMail.desktop
+%{_desktopdir}/kde/kmailcvt.desktop
+%{_iconsdir}/*/*/*/kmail*.png
 
 %files knewsticker
 %defattr(644,root,root,755)
@@ -526,28 +505,28 @@ fi
 %attr(755,root,root) %{_libdir}/kde3/knewsticker_panelapplet.so
 %{_libdir}/kde3/kcm_knewsticker.la
 %attr(755,root,root) %{_libdir}/kde3/kcm_knewsticker.so
-%{_applnkdir}/Settings/KDE/Personalization/kcmnewsticker.desktop
-%{_applnkdir}/Network/News/knewsticker*.desktop
-%{_applnkdir}/.hidden/knewstickerstub.desktop
-%{_applnkdir}/.hidden/kcmnewsticker.desktop
+%{_desktopdir}/kde/kcmnewsticker.desktop
+%{_desktopdir}/kde/knewsticker*.desktop
+%{_datadir}/applnk/.hidden/knewstickerstub.desktop
+%{_datadir}/applnk/.hidden/kcmnewsticker.desktop
 %{_datadir}/services/knewsservice.protocol
 %{_datadir}/apps/knewsticker
 %{_datadir}/apps/kicker/applets/knewsticker.desktop
 %{_datadir}/apps/kconf_update/kn*
-%{_pixmapsdir}/*/*/*/knewsticker.png
+%{_iconsdir}/*/*/*/knewsticker.png
 
 %files knode
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/knode
-%{_applnkdir}/Network/News/KNode.desktop
+%{_desktopdir}/kde/KNode.desktop
 %{_datadir}/apps/knode
-%{_pixmapsdir}/*/*/*/knode.png
+%{_iconsdir}/*/*/*/knode.png
 
 %files korn
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/korn
-%{_applnkdir}/Network/Mail/KOrn.desktop
-%{_pixmapsdir}/*/*/*/korn.png
+%{_desktopdir}/kde/KOrn.desktop
+%{_iconsdir}/*/*/*/korn.png
 
 %files kpf
 %defattr(644,root,root,755)
@@ -557,16 +536,16 @@ fi
 %attr(755,root,root) %{_libdir}/kde3/kpfpropertiesdialog.so
 %{_datadir}/apps/kicker/applets/kpf*
 %{_datadir}/services/kpfpropertiesdialogplugin.desktop
-%{_pixmapsdir}/*/*/*/kpf*
+%{_iconsdir}/*/*/*/kpf*
 
 %files kppp
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kppplogview
 %attr(755,root,root) %{_bindir}/kppp
-%{_applnkdir}/Network/Misc/Kppp.desktop
-%{_applnkdir}/Network/Misc/kppplogview.desktop
+%{_desktopdir}/kde/Kppp.desktop
+%{_desktopdir}/kde/kppplogview.desktop
 %{_datadir}/apps/kppp
-%{_pixmapsdir}/*/*/*/kppp.png
+%{_iconsdir}/*/*/*/kppp.png
 
 %files krfb
 %defattr(644,root,root,755)
@@ -578,11 +557,11 @@ fi
 %{_datadir}/apps/krfb
 %{_datadir}/services/kinetd_krfb.desktop
 %{_datadir}/services/vnc.protocol
-%{_applnkdir}/Network/Misc/krdc.desktop
-%{_applnkdir}/Network/Misc/krfb.desktop
-%{_applnkdir}/Settings/KDE/Network/kcmkrfb.desktop
-%{_pixmapsdir}/*/*/*/krdc*
-%{_pixmapsdir}/[!l]*/*/*/krfb*
+%{_desktopdir}/kde/krdc.desktop
+%{_desktopdir}/kde/krfb.desktop
+%{_desktopdir}/kde/kcmkrfb.desktop
+%{_iconsdir}/*/*/*/krdc*
+%{_iconsdir}/[!l]*/*/*/krfb*
 
 %files ksirc
 %defattr(644,root,root,755)
@@ -592,11 +571,11 @@ fi
 %attr(755,root,root) %{_libdir}/ksirc.so
 %{_libdir}/libkntsrcfilepropsdlg.la
 %attr(755,root,root) %{_libdir}/libkntsrcfilepropsdlg.so
-%{_applnkdir}/Network/Communications/ksirc.desktop
+%{_desktopdir}/kde/ksirc.desktop
 %{_datadir}/config/ksircrc
 %{_datadir}/apps/ksirc
 %{_datadir}/services/kntsrcfilepropsdlg.desktop
-%{_pixmapsdir}/[!l]*/*/*/ksirc*
+%{_iconsdir}/[!l]*/*/*/ksirc*
 
 %files ktalkd
 %defattr(644,root,root,755)
@@ -605,15 +584,15 @@ fi
 %attr(755,root,root) %{_libdir}/kde3/kcm_ktalkd.so
 %{_datadir}/config/ktalkd*
 %{_datadir}/sounds/ktalkd*
-%{_pixmapsdir}/*/*/*/ktalkd*
-%{_applnkdir}/Settings/KDE/Network/kcmktalkd.desktop
+%{_iconsdir}/*/*/*/ktalkd*
+%{_desktopdir}/kde/kcmktalkd.desktop
 
 %files ktnef
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ktnef
 %{_libdir}/libktnef.la
 %attr(755,root,root) %{_libdir}/libktnef.so.*
-%{_pixmapsdir}/*/*/*/ktnef*
+%{_iconsdir}/*/*/*/ktnef*
 
 
 %files kxmlrpcd
@@ -640,6 +619,6 @@ fi
 %{_datadir}/services/lan.protocol
 %{_datadir}/apps/lisa
 %{_datadir}/apps/konqueror/dirtree/remote/lan.desktop
-%{_applnkdir}/.hidden/kcmkiolan.desktop
-%{_applnkdir}/.hidden/kcmlisa.desktop
-%{_applnkdir}/.hidden/kcmreslisa.desktop
+%{_datadir}/applnk/.hidden/kcmkiolan.desktop
+%{_datadir}/applnk/.hidden/kcmlisa.desktop
+%{_datadir}/applnk/.hidden/kcmreslisa.desktop
