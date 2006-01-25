@@ -387,7 +387,7 @@ kde_cv_utmp_file=/var/run/utmpx ; export kde_cv_utmp_file
 	--%{!?debug:dis}%{?debug:en}able-debug \
 	--enable-kernel-threads \
 	--with-pam="yes" \
-	--enable-final
+	--disable-final
 %{__make}
 
 %install
