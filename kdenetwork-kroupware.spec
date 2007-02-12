@@ -2,9 +2,9 @@
 %define		_ver		1.0.1
 
 Summary:	K Desktop Environment - network applications
-Summary(es):	K Desktop Environment - aplicaciones de red
-Summary(pl):	K Desktop Environment - aplikacje sieciowe
-Summary(pt_BR):	K Desktop Environment - aplicações de rede
+Summary(es.UTF-8):   K Desktop Environment - aplicaciones de red
+Summary(pl.UTF-8):   K Desktop Environment - aplikacje sieciowe
+Summary(pt_BR.UTF-8):   K Desktop Environment - aplicaÃ§Ãµes de rede
 Name:		kdenetwork-kroupware
 Version:	%{_ver}
 Release:	3
@@ -46,36 +46,36 @@ KDE network applications. Package includes:
 - KXmlRpcd - XmlRpc Daemon
 - Lanbrowser - LAN Browser
 
-%description -l pl
+%description -l pl.UTF-8
 Aplikacje sieciowe KDE. Pakiet zawiera:
-- KDict - klient s³ownika
-- KGet - ¶ci±gacz plików
+- KDict - klient sÅ‚ownika
+- KGet - Å›ciÄ…gacz plikÃ³w
 - KIT - klient AOL Instant Messenger
-- KMail - program pocztowy, z poprawion± obs³ug± zestawów znaków
-- KORN - program pokazuj±cy stan skrzynek pocztowych
-- KPF - applet publicznego serwera plików
-- KPPP - program do nawi±zywania po³±czeñ modemowych
+- KMail - program pocztowy, z poprawionÄ… obsÅ‚ugÄ… zestawÃ³w znakÃ³w
+- KORN - program pokazujÄ…cy stan skrzynek pocztowych
+- KPF - applet publicznego serwera plikÃ³w
+- KPPP - program do nawiÄ…zywania poÅ‚Ä…czeÅ„ modemowych
 - KNewsticker - News Ticker
-- KNODE - program do czytania newsów
+- KNODE - program do czytania newsÃ³w
 - KRFB - wirtualne biurka
 - KSirc - klient IRC
 - KTalkd - demon Talk
 - KXmlRpcd - demon XmlRpc
-- Lanbrowser - przegl±darka LAN-u
+- Lanbrowser - przeglÄ…darka LAN-u
 
-%description -l pt_BR
-Aplicações de Rede para o KDE.
+%description -l pt_BR.UTF-8
+AplicaÃ§Ãµes de Rede para o KDE.
 
-Incluídos neste pacote:
+IncluÃ­dos neste pacote:
 
-kmail: leitor de correio knu: utilitários de rede korn: ferramenta de
-monitoração da caixa de correio kppp: configuração fácil para conexão
-PPP krn: leitor de notícias
+kmail: leitor de correio knu: utilitÃ¡rios de rede korn: ferramenta de
+monitoraÃ§Ã£o da caixa de correio kppp: configuraÃ§Ã£o fÃ¡cil para conexÃ£o
+PPP krn: leitor de notÃ­cias
 
 %package devel
 Summary:	Header files and development documentation
-Summary(pl):	Pliki nag³ówkowe i dokumentacja developerska
-Summary(pt_BR):	Arquivos de inclusão para compilar aplicações que usem as bibliotecas do kdenetwork
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe i dokumentacja developerska
+Summary(pt_BR.UTF-8):   Arquivos de inclusÃ£o para compilar aplicaÃ§Ãµes que usem as bibliotecas do kdenetwork
 Group:		X11/Development/Libraries
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-devel
@@ -84,16 +84,16 @@ Obsoletes:	kdenetwork-devel
 %description devel
 Header files and development documentation.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja developerska.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja developerska.
 
-%description devel -l pt_BR
-Arquivos de inclusão para compilar aplicações que usem as bibliotecas
+%description devel -l pt_BR.UTF-8
+Arquivos de inclusÃ£o para compilar aplicaÃ§Ãµes que usem as bibliotecas
 do kdenetwork.
 
 %package kdict
 Summary:	Online dictionary client
-Summary(pl):	Klient s³ownika
+Summary(pl.UTF-8):   Klient sÅ‚ownika
 License:	Artistic
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
@@ -105,16 +105,16 @@ Obsoletes:	kdict
 %description kdict
 Online dictionary client.
 
-%description kdict -l pl
-Klient s³ownika.
+%description kdict -l pl.UTF-8
+Klient sÅ‚ownika.
 
-%description kdict -l pt_BR
-kdict é um utilitário de dicionário que usa servidores dictd da
+%description kdict -l pt_BR.UTF-8
+kdict Ã© um utilitÃ¡rio de dicionÃ¡rio que usa servidores dictd da
 Internet.
 
 %package kinetd
 Summary:	KDE Internet Daemon
-Summary(pl):	Demon internetowy KDE
+Summary(pl.UTF-8):   Demon internetowy KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kinetd
@@ -124,12 +124,12 @@ Obsoletes:	kdenetwork-kinetd
 %description kinetd
 An Internet daemon that starts network services on demand.
 
-%description kinetd -l pl
-Demon internetowy, który uruchamia na ¿±danie us³ugi sieciowe.
+%description kinetd -l pl.UTF-8
+Demon internetowy, ktÃ³ry uruchamia na Å¼Ä…danie usÅ‚ugi sieciowe.
 
 %package kget
 Summary:	File Downloander
-Summary(pl):	¦ci±gacz plików
+Summary(pl.UTF-8):   ÅšciÄ…gacz plikÃ³w
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kget
@@ -138,13 +138,13 @@ Obsoletes:	kdenetwork-kget
 %description kget
 File Downloader.
 
-%description kget -l pl
-¦ci±gacz plików.
+%description kget -l pl.UTF-8
+ÅšciÄ…gacz plikÃ³w.
 
 %package kit
 Summary:	KDE AOL Instant Messenger
-Summary(pl):	Klient AOL Instant Messenger dla KDE
-Summary(pt_BR):	Comunicador que usa o protocolo AOL
+Summary(pl.UTF-8):   Klient AOL Instant Messenger dla KDE
+Summary(pt_BR.UTF-8):   Comunicador que usa o protocolo AOL
 License:	LGPL
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
@@ -154,16 +154,16 @@ Obsoletes:	kdenetwork-kit
 %description kit
 KDE AOL Instant Messenger.
 
-%description kit -l pl
+%description kit -l pl.UTF-8
 Klient AOL Instant Messenger dla KDE.
 
-%description kit -l pt_BR
+%description kit -l pt_BR.UTF-8
 Comunicador que usa o protocolo AOL.
 
 %package kmail
 Summary:	KDE Mail client
-Summary(pl):	Program pocztowy KDE
-Summary(pt_BR):	Cliente / leitor de e-mails para o KDE
+Summary(pl.UTF-8):   Program pocztowy KDE
+Summary(pt_BR.UTF-8):   Cliente / leitor de e-mails para o KDE
 Group:		X11/Applications
 Requires:	%{name} >= %{version}
 Requires:	kdebase-mailnews
@@ -177,20 +177,20 @@ from POP3 accounts and from local mailboxes.
 
 This package contains version patched for better charset support.
 
-%description kmail -l pl
-Program pocztowy dla KDE. Potrafi odczytywaæ pocztê z kont POP3 jak i
+%description kmail -l pl.UTF-8
+Program pocztowy dla KDE. Potrafi odczytywaÄ‡ pocztÄ™ z kont POP3 jak i
 lokalnych skrzynek.
 
-Ten pakiet zawiera wersj± programu z poprawion± obs³ug± zestawów
-znaków.
+Ten pakiet zawiera wersjÄ… programu z poprawionÄ… obsÅ‚ugÄ… zestawÃ³w
+znakÃ³w.
 
-%description kmail -l pt_BR
+%description kmail -l pt_BR.UTF-8
 Poderoso cliente / leitor de e-mails para o KDE.
 
 %package knewsticker
 Summary:	KDE News Ticker
-Summary(pl):	News Ticker dla KDE
-Summary(pt_BR):	Miniaplicativo de exibição de notícias para o painel Kicker
+Summary(pl.UTF-8):   News Ticker dla KDE
+Summary(pt_BR.UTF-8):   Miniaplicativo de exibiÃ§Ã£o de notÃ­cias para o painel Kicker
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-knewsticker
@@ -199,16 +199,16 @@ Obsoletes:	kdenetwork-knewsticker
 %description knewsticker
 KDE News Ticker.
 
-%description knewsticker -l pl
+%description knewsticker -l pl.UTF-8
 News Ticker dla KDE.
 
-%description knewsticker -l pt_BR
-Miniaplicativo de exibição de notícias para o painel Kicker.
+%description knewsticker -l pt_BR.UTF-8
+Miniaplicativo de exibiÃ§Ã£o de notÃ­cias para o painel Kicker.
 
 %package knode
 Summary:	KDE News Reader
-Summary(pl):	Czytnik newsów dla KDE
-Summary(pt_BR):	Leitor de notícias (news) do KDE
+Summary(pl.UTF-8):   Czytnik newsÃ³w dla KDE
+Summary(pt_BR.UTF-8):   Leitor de notÃ­cias (news) do KDE
 Group:		X11/Applications
 Requires:	%{name} >= %{version}
 Requires:	kdebase-mailnews
@@ -220,16 +220,16 @@ Obsoletes:	kdenetwork-knode
 This is a news reader for KDE. It has threading and everything else
 you need to be happy reading your news.
 
-%description knode -l pl
-Czytnik newsów dla KDE. Obs³uguje w±tki oraz killfile.
+%description knode -l pl.UTF-8
+Czytnik newsÃ³w dla KDE. ObsÅ‚uguje wÄ…tki oraz killfile.
 
-%description knode -l pt_BR
-Leitor de notícias (news) do KDE.
+%description knode -l pt_BR.UTF-8
+Leitor de notÃ­cias (news) do KDE.
 
 %package korn
 Summary:	KDE 'biff' application
-Summary(pl):	Wska¼nik skrzynki pocztowej dla KDE
-Summary(pt_BR):	Miniaplicativo de monitoração da caixa de correio
+Summary(pl.UTF-8):   WskaÅºnik skrzynki pocztowej dla KDE
+Summary(pt_BR.UTF-8):   Miniaplicativo de monitoraÃ§Ã£o da caixa de correio
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-korn
@@ -238,16 +238,16 @@ Obsoletes:	kdenetwork-korn
 %description korn
 A simple program showing number of mails in your folders.
 
-%description korn -l pl
-Programik pokazuj±cy ilo¶æ wiadomo¶ci w wybranych folderach
+%description korn -l pl.UTF-8
+Programik pokazujÄ…cy iloÅ›Ä‡ wiadomoÅ›ci w wybranych folderach
 pocztowych.
 
-%description korn -l pt_BR
-Miniaplicativo de monitoração da caixa de correio.
+%description korn -l pt_BR.UTF-8
+Miniaplicativo de monitoraÃ§Ã£o da caixa de correio.
 
 %package kpf
 Summary:	Public fileserver applet
-Summary(pl):	Applet publicznego serwera plików
+Summary(pl.UTF-8):   Applet publicznego serwera plikÃ³w
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kpf
@@ -256,13 +256,13 @@ Obsoletes:	kdenetwork-kpf
 %description kpf
 Public fileserver applet.
 
-%description kpf -l pl
-Applet publicznego serwera plików.
+%description kpf -l pl.UTF-8
+Applet publicznego serwera plikÃ³w.
 
 %package kppp
 Summary:	KDE PPP dialer
-Summary(pl):	Program do po³±czeñ modemowych dla KDE
-Summary(pt_BR):	O discador para Internet
+Summary(pl.UTF-8):   Program do poÅ‚Ä…czeÅ„ modemowych dla KDE
+Summary(pt_BR.UTF-8):   O discador para Internet
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Requires:	ppp
@@ -272,17 +272,17 @@ Obsoletes:	kdenetwork-kppp
 %description kppp
 A PPPP dialer for KDE. It supports multiple accounts.
 
-%description kppp -l pl
-Program no nawi±zywania po³±czeñ modemowych pod KDE. Posiada ³atwy
-interfejs i mo¿liwo¶æ zdefiniowania kilku kont.
+%description kppp -l pl.UTF-8
+Program no nawiÄ…zywania poÅ‚Ä…czeÅ„ modemowych pod KDE. Posiada Å‚atwy
+interfejs i moÅ¼liwoÅ›Ä‡ zdefiniowania kilku kont.
 
-%description kppp -l pt_BR
+%description kppp -l pt_BR.UTF-8
 O discador para Internet.
 
 %package ksirc
 Summary:	KDE IRC client
-Summary(pl):	Klient IRC dla KDE
-Summary(pt_BR):	Cliente de IRC do KDE
+Summary(pl.UTF-8):   Klient IRC dla KDE
+Summary(pt_BR.UTF-8):   Cliente de IRC do KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-ksirc
@@ -291,15 +291,15 @@ Obsoletes:	kdenetwork-ksirc
 %description ksirc
 KDE IRC client.
 
-%description ksirc -l pl
+%description ksirc -l pl.UTF-8
 Klient IRC dla KDE.
 
-%description ksirc -l pt_BR
+%description ksirc -l pt_BR.UTF-8
 Cliente de IRC do KDE.
 
 %package krfb
 Summary:	Virtual Desktops
-Summary(pl):	Wirtualne biurka
+Summary(pl.UTF-8):   Wirtualne biurka
 Group:		X11/Applications
 Requires:	%{name}-kinetd = %{version}
 Requires:	kdelibs >= 3.1.1
@@ -309,12 +309,12 @@ Obsoletes:	kdenetwork-krfb
 %description krfb
 Virtual Desktops.
 
-%description krfb -l pl
+%description krfb -l pl.UTF-8
 Wirtualne biurka.
 
 %package ktalkd
 Summary:	Talk daemon
-Summary(pl):	Daemon talk
+Summary(pl.UTF-8):   Daemon talk
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-ktalkd
@@ -323,12 +323,12 @@ Obsoletes:	kdenetwork-ktalkd
 %description ktalkd
 Talk daemon.
 
-%description ktalkd -l pl
+%description ktalkd -l pl.UTF-8
 Demon talk.
 
 %package ktnef
 Summary:	A viewer/extractor for TNEF files
-Summary(pl):	Konwerter/ekstraktor plików TNEF
+Summary(pl.UTF-8):   Konwerter/ekstraktor plikÃ³w TNEF
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-ktnef
@@ -337,12 +337,12 @@ Obsoletes:	kdenetwork-ktnef
 %description ktnef
 A viewer/extractor for TNEF files.
 
-%description ktnef -l pl
-Konwerter/ekstraktor plików TNEF.
+%description ktnef -l pl.UTF-8
+Konwerter/ekstraktor plikÃ³w TNEF.
 
 %package kxmlrpcd
 Summary:	KDE XmlRpc Daemon
-Summary(pl):	Deamon XmlRpc dla KDE
+Summary(pl.UTF-8):   Deamon XmlRpc dla KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kxmlrpcd
@@ -351,12 +351,12 @@ Obsoletes:	kdenetwork-kxmlrpcd
 %description kxmlrpcd
 KDE XmlRpc Daemon.
 
-%description kxmlrpcd -l pl
+%description kxmlrpcd -l pl.UTF-8
 Demon XmlRpc dla KDE.
 
 %package lanbrowser
 Summary:	KDE LAN Browser
-Summary(pl):	Przegl±darka LAN-u dla KDE
+Summary(pl.UTF-8):   PrzeglÄ…darka LAN-u dla KDE
 Group:		X11/Applications
 Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
@@ -370,8 +370,8 @@ Obsoletes:	kdenetwork-lanbrowser
 %description lanbrowser
 KDE LAN Browser.
 
-%description lanbrowser -l pl
-Przegl±darka LAN-u dla KDE.
+%description lanbrowser -l pl.UTF-8
+PrzeglÄ…darka LAN-u dla KDE.
 
 %prep
 %setup -q
