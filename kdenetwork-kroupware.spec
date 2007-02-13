@@ -2,9 +2,9 @@
 %define		_ver		1.0.1
 
 Summary:	K Desktop Environment - network applications
-Summary(es.UTF-8):   K Desktop Environment - aplicaciones de red
-Summary(pl.UTF-8):   K Desktop Environment - aplikacje sieciowe
-Summary(pt_BR.UTF-8):   K Desktop Environment - aplicações de rede
+Summary(es.UTF-8):	K Desktop Environment - aplicaciones de red
+Summary(pl.UTF-8):	K Desktop Environment - aplikacje sieciowe
+Summary(pt_BR.UTF-8):	K Desktop Environment - aplicações de rede
 Name:		kdenetwork-kroupware
 Version:	%{_ver}
 Release:	3
@@ -74,8 +74,8 @@ PPP krn: leitor de notícias
 
 %package devel
 Summary:	Header files and development documentation
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja developerska
-Summary(pt_BR.UTF-8):   Arquivos de inclusão para compilar aplicações que usem as bibliotecas do kdenetwork
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja developerska
+Summary(pt_BR.UTF-8):	Arquivos de inclusão para compilar aplicações que usem as bibliotecas do kdenetwork
 Group:		X11/Development/Libraries
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-devel
@@ -93,7 +93,7 @@ do kdenetwork.
 
 %package kdict
 Summary:	Online dictionary client
-Summary(pl.UTF-8):   Klient słownika
+Summary(pl.UTF-8):	Klient słownika
 License:	Artistic
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
@@ -114,7 +114,7 @@ Internet.
 
 %package kinetd
 Summary:	KDE Internet Daemon
-Summary(pl.UTF-8):   Demon internetowy KDE
+Summary(pl.UTF-8):	Demon internetowy KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kinetd
@@ -129,7 +129,7 @@ Demon internetowy, który uruchamia na żądanie usługi sieciowe.
 
 %package kget
 Summary:	File Downloander
-Summary(pl.UTF-8):   Ściągacz plików
+Summary(pl.UTF-8):	Ściągacz plików
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kget
@@ -143,8 +143,8 @@ File Downloader.
 
 %package kit
 Summary:	KDE AOL Instant Messenger
-Summary(pl.UTF-8):   Klient AOL Instant Messenger dla KDE
-Summary(pt_BR.UTF-8):   Comunicador que usa o protocolo AOL
+Summary(pl.UTF-8):	Klient AOL Instant Messenger dla KDE
+Summary(pt_BR.UTF-8):	Comunicador que usa o protocolo AOL
 License:	LGPL
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
@@ -162,8 +162,8 @@ Comunicador que usa o protocolo AOL.
 
 %package kmail
 Summary:	KDE Mail client
-Summary(pl.UTF-8):   Program pocztowy KDE
-Summary(pt_BR.UTF-8):   Cliente / leitor de e-mails para o KDE
+Summary(pl.UTF-8):	Program pocztowy KDE
+Summary(pt_BR.UTF-8):	Cliente / leitor de e-mails para o KDE
 Group:		X11/Applications
 Requires:	%{name} >= %{version}
 Requires:	kdebase-mailnews
@@ -189,8 +189,8 @@ Poderoso cliente / leitor de e-mails para o KDE.
 
 %package knewsticker
 Summary:	KDE News Ticker
-Summary(pl.UTF-8):   News Ticker dla KDE
-Summary(pt_BR.UTF-8):   Miniaplicativo de exibição de notícias para o painel Kicker
+Summary(pl.UTF-8):	News Ticker dla KDE
+Summary(pt_BR.UTF-8):	Miniaplicativo de exibição de notícias para o painel Kicker
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-knewsticker
@@ -207,8 +207,8 @@ Miniaplicativo de exibição de notícias para o painel Kicker.
 
 %package knode
 Summary:	KDE News Reader
-Summary(pl.UTF-8):   Czytnik newsów dla KDE
-Summary(pt_BR.UTF-8):   Leitor de notícias (news) do KDE
+Summary(pl.UTF-8):	Czytnik newsów dla KDE
+Summary(pt_BR.UTF-8):	Leitor de notícias (news) do KDE
 Group:		X11/Applications
 Requires:	%{name} >= %{version}
 Requires:	kdebase-mailnews
@@ -228,8 +228,8 @@ Leitor de notícias (news) do KDE.
 
 %package korn
 Summary:	KDE 'biff' application
-Summary(pl.UTF-8):   Wskaźnik skrzynki pocztowej dla KDE
-Summary(pt_BR.UTF-8):   Miniaplicativo de monitoração da caixa de correio
+Summary(pl.UTF-8):	Wskaźnik skrzynki pocztowej dla KDE
+Summary(pt_BR.UTF-8):	Miniaplicativo de monitoração da caixa de correio
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-korn
@@ -247,7 +247,7 @@ Miniaplicativo de monitoração da caixa de correio.
 
 %package kpf
 Summary:	Public fileserver applet
-Summary(pl.UTF-8):   Applet publicznego serwera plików
+Summary(pl.UTF-8):	Applet publicznego serwera plików
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kpf
@@ -261,8 +261,8 @@ Applet publicznego serwera plików.
 
 %package kppp
 Summary:	KDE PPP dialer
-Summary(pl.UTF-8):   Program do połączeń modemowych dla KDE
-Summary(pt_BR.UTF-8):   O discador para Internet
+Summary(pl.UTF-8):	Program do połączeń modemowych dla KDE
+Summary(pt_BR.UTF-8):	O discador para Internet
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Requires:	ppp
@@ -281,8 +281,8 @@ O discador para Internet.
 
 %package ksirc
 Summary:	KDE IRC client
-Summary(pl.UTF-8):   Klient IRC dla KDE
-Summary(pt_BR.UTF-8):   Cliente de IRC do KDE
+Summary(pl.UTF-8):	Klient IRC dla KDE
+Summary(pt_BR.UTF-8):	Cliente de IRC do KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-ksirc
@@ -299,7 +299,7 @@ Cliente de IRC do KDE.
 
 %package krfb
 Summary:	Virtual Desktops
-Summary(pl.UTF-8):   Wirtualne biurka
+Summary(pl.UTF-8):	Wirtualne biurka
 Group:		X11/Applications
 Requires:	%{name}-kinetd = %{version}
 Requires:	kdelibs >= 3.1.1
@@ -314,7 +314,7 @@ Wirtualne biurka.
 
 %package ktalkd
 Summary:	Talk daemon
-Summary(pl.UTF-8):   Daemon talk
+Summary(pl.UTF-8):	Daemon talk
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-ktalkd
@@ -328,7 +328,7 @@ Demon talk.
 
 %package ktnef
 Summary:	A viewer/extractor for TNEF files
-Summary(pl.UTF-8):   Konwerter/ekstraktor plików TNEF
+Summary(pl.UTF-8):	Konwerter/ekstraktor plików TNEF
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-ktnef
@@ -342,7 +342,7 @@ Konwerter/ekstraktor plików TNEF.
 
 %package kxmlrpcd
 Summary:	KDE XmlRpc Daemon
-Summary(pl.UTF-8):   Deamon XmlRpc dla KDE
+Summary(pl.UTF-8):	Deamon XmlRpc dla KDE
 Group:		X11/Applications
 Requires:	kdelibs >= 3.1.1
 Provides:	kdenetwork-kxmlrpcd
@@ -356,7 +356,7 @@ Demon XmlRpc dla KDE.
 
 %package lanbrowser
 Summary:	KDE LAN Browser
-Summary(pl.UTF-8):   Przeglądarka LAN-u dla KDE
+Summary(pl.UTF-8):	Przeglądarka LAN-u dla KDE
 Group:		X11/Applications
 Requires:	rc-scripts
 Requires(post,preun):	/sbin/chkconfig
