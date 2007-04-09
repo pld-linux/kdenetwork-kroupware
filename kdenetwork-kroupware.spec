@@ -23,7 +23,7 @@ BuildRequires:	kdelibs-devel >= 3.1.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-progs
 BuildRequires:	perl
-BuildRequires:	qt-devel >= 3.1
+BuildRequires:	qt-devel >= 6:3.1
 BuildRequires:	rpmbuild(macros) >= 1.129
 Provides:	kdenetwork
 Obsoletes:	kdenetwork
