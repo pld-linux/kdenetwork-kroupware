@@ -18,7 +18,7 @@ Source4:	kdenetwork-lisarc
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	fam-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	kdelibs-devel >= 3.1.1
 BuildRequires:	libtool
 BuildRequires:	libxml2-progs
